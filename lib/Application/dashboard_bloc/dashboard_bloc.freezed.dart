@@ -18,8 +18,18 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$DashboardEventTearOff {
   const _$DashboardEventTearOff();
 
-  _Started started() {
-    return const _Started();
+  _LoadUser loadUser() {
+    return const _LoadUser();
+  }
+
+  _LoadPokemon loadPokemon() {
+    return const _LoadPokemon();
+  }
+
+  _LoadPokemonTypes loadPokemonTypes(String id) {
+    return _LoadPokemonTypes(
+      id,
+    );
   }
 }
 
@@ -30,33 +40,45 @@ const $DashboardEvent = _$DashboardEventTearOff();
 mixin _$DashboardEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() loadUser,
+    required TResult Function() loadPokemon,
+    required TResult Function(String id) loadPokemonTypes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? loadUser,
+    TResult Function()? loadPokemon,
+    TResult Function(String id)? loadPokemonTypes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? loadUser,
+    TResult Function()? loadPokemon,
+    TResult Function(String id)? loadPokemonTypes,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_LoadUser value) loadUser,
+    required TResult Function(_LoadPokemon value) loadPokemon,
+    required TResult Function(_LoadPokemonTypes value) loadPokemonTypes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_LoadUser value)? loadUser,
+    TResult Function(_LoadPokemon value)? loadPokemon,
+    TResult Function(_LoadPokemonTypes value)? loadPokemonTypes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_LoadUser value)? loadUser,
+    TResult Function(_LoadPokemon value)? loadPokemon,
+    TResult Function(_LoadPokemonTypes value)? loadPokemonTypes,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -80,35 +102,35 @@ class _$DashboardEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
+abstract class _$LoadUserCopyWith<$Res> {
+  factory _$LoadUserCopyWith(_LoadUser value, $Res Function(_LoadUser) then) =
+      __$LoadUserCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$DashboardEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
+class __$LoadUserCopyWithImpl<$Res> extends _$DashboardEventCopyWithImpl<$Res>
+    implements _$LoadUserCopyWith<$Res> {
+  __$LoadUserCopyWithImpl(_LoadUser _value, $Res Function(_LoadUser) _then)
+      : super(_value, (v) => _then(v as _LoadUser));
 
   @override
-  _Started get _value => super._value as _Started;
+  _LoadUser get _value => super._value as _LoadUser;
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$_LoadUser implements _LoadUser {
+  const _$_LoadUser();
 
   @override
   String toString() {
-    return 'DashboardEvent.started()';
+    return 'DashboardEvent.loadUser()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Started);
+        (other.runtimeType == runtimeType && other is _LoadUser);
   }
 
   @override
@@ -117,27 +139,33 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() loadUser,
+    required TResult Function() loadPokemon,
+    required TResult Function(String id) loadPokemonTypes,
   }) {
-    return started();
+    return loadUser();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? loadUser,
+    TResult Function()? loadPokemon,
+    TResult Function(String id)? loadPokemonTypes,
   }) {
-    return started?.call();
+    return loadUser?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? loadUser,
+    TResult Function()? loadPokemon,
+    TResult Function(String id)? loadPokemonTypes,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (loadUser != null) {
+      return loadUser();
     }
     return orElse();
   }
@@ -145,44 +173,311 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_LoadUser value) loadUser,
+    required TResult Function(_LoadPokemon value) loadPokemon,
+    required TResult Function(_LoadPokemonTypes value) loadPokemonTypes,
   }) {
-    return started(this);
+    return loadUser(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_LoadUser value)? loadUser,
+    TResult Function(_LoadPokemon value)? loadPokemon,
+    TResult Function(_LoadPokemonTypes value)? loadPokemonTypes,
   }) {
-    return started?.call(this);
+    return loadUser?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_LoadUser value)? loadUser,
+    TResult Function(_LoadPokemon value)? loadPokemon,
+    TResult Function(_LoadPokemonTypes value)? loadPokemonTypes,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (loadUser != null) {
+      return loadUser(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements DashboardEvent {
-  const factory _Started() = _$_Started;
+abstract class _LoadUser implements DashboardEvent {
+  const factory _LoadUser() = _$_LoadUser;
+}
+
+/// @nodoc
+abstract class _$LoadPokemonCopyWith<$Res> {
+  factory _$LoadPokemonCopyWith(
+          _LoadPokemon value, $Res Function(_LoadPokemon) then) =
+      __$LoadPokemonCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadPokemonCopyWithImpl<$Res>
+    extends _$DashboardEventCopyWithImpl<$Res>
+    implements _$LoadPokemonCopyWith<$Res> {
+  __$LoadPokemonCopyWithImpl(
+      _LoadPokemon _value, $Res Function(_LoadPokemon) _then)
+      : super(_value, (v) => _then(v as _LoadPokemon));
+
+  @override
+  _LoadPokemon get _value => super._value as _LoadPokemon;
+}
+
+/// @nodoc
+
+class _$_LoadPokemon implements _LoadPokemon {
+  const _$_LoadPokemon();
+
+  @override
+  String toString() {
+    return 'DashboardEvent.loadPokemon()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadPokemon);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadUser,
+    required TResult Function() loadPokemon,
+    required TResult Function(String id) loadPokemonTypes,
+  }) {
+    return loadPokemon();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadUser,
+    TResult Function()? loadPokemon,
+    TResult Function(String id)? loadPokemonTypes,
+  }) {
+    return loadPokemon?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadUser,
+    TResult Function()? loadPokemon,
+    TResult Function(String id)? loadPokemonTypes,
+    required TResult orElse(),
+  }) {
+    if (loadPokemon != null) {
+      return loadPokemon();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadUser value) loadUser,
+    required TResult Function(_LoadPokemon value) loadPokemon,
+    required TResult Function(_LoadPokemonTypes value) loadPokemonTypes,
+  }) {
+    return loadPokemon(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LoadUser value)? loadUser,
+    TResult Function(_LoadPokemon value)? loadPokemon,
+    TResult Function(_LoadPokemonTypes value)? loadPokemonTypes,
+  }) {
+    return loadPokemon?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadUser value)? loadUser,
+    TResult Function(_LoadPokemon value)? loadPokemon,
+    TResult Function(_LoadPokemonTypes value)? loadPokemonTypes,
+    required TResult orElse(),
+  }) {
+    if (loadPokemon != null) {
+      return loadPokemon(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadPokemon implements DashboardEvent {
+  const factory _LoadPokemon() = _$_LoadPokemon;
+}
+
+/// @nodoc
+abstract class _$LoadPokemonTypesCopyWith<$Res> {
+  factory _$LoadPokemonTypesCopyWith(
+          _LoadPokemonTypes value, $Res Function(_LoadPokemonTypes) then) =
+      __$LoadPokemonTypesCopyWithImpl<$Res>;
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$LoadPokemonTypesCopyWithImpl<$Res>
+    extends _$DashboardEventCopyWithImpl<$Res>
+    implements _$LoadPokemonTypesCopyWith<$Res> {
+  __$LoadPokemonTypesCopyWithImpl(
+      _LoadPokemonTypes _value, $Res Function(_LoadPokemonTypes) _then)
+      : super(_value, (v) => _then(v as _LoadPokemonTypes));
+
+  @override
+  _LoadPokemonTypes get _value => super._value as _LoadPokemonTypes;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_LoadPokemonTypes(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_LoadPokemonTypes implements _LoadPokemonTypes {
+  const _$_LoadPokemonTypes(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'DashboardEvent.loadPokemonTypes(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _LoadPokemonTypes &&
+            const DeepCollectionEquality().equals(other.id, id));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+
+  @JsonKey(ignore: true)
+  @override
+  _$LoadPokemonTypesCopyWith<_LoadPokemonTypes> get copyWith =>
+      __$LoadPokemonTypesCopyWithImpl<_LoadPokemonTypes>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadUser,
+    required TResult Function() loadPokemon,
+    required TResult Function(String id) loadPokemonTypes,
+  }) {
+    return loadPokemonTypes(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadUser,
+    TResult Function()? loadPokemon,
+    TResult Function(String id)? loadPokemonTypes,
+  }) {
+    return loadPokemonTypes?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadUser,
+    TResult Function()? loadPokemon,
+    TResult Function(String id)? loadPokemonTypes,
+    required TResult orElse(),
+  }) {
+    if (loadPokemonTypes != null) {
+      return loadPokemonTypes(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadUser value) loadUser,
+    required TResult Function(_LoadPokemon value) loadPokemon,
+    required TResult Function(_LoadPokemonTypes value) loadPokemonTypes,
+  }) {
+    return loadPokemonTypes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LoadUser value)? loadUser,
+    TResult Function(_LoadPokemon value)? loadPokemon,
+    TResult Function(_LoadPokemonTypes value)? loadPokemonTypes,
+  }) {
+    return loadPokemonTypes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadUser value)? loadUser,
+    TResult Function(_LoadPokemon value)? loadPokemon,
+    TResult Function(_LoadPokemonTypes value)? loadPokemonTypes,
+    required TResult orElse(),
+  }) {
+    if (loadPokemonTypes != null) {
+      return loadPokemonTypes(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadPokemonTypes implements DashboardEvent {
+  const factory _LoadPokemonTypes(String id) = _$_LoadPokemonTypes;
+
+  String get id;
+  @JsonKey(ignore: true)
+  _$LoadPokemonTypesCopyWith<_LoadPokemonTypes> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$DashboardStateTearOff {
   const _$DashboardStateTearOff();
 
-  DashBoardState call({required bool isLoading, required User user}) {
-    return DashBoardState(
-      isLoading: isLoading,
+  _DashboardState call(
+      {required bool isLoadingUser,
+      required bool isLoadingPokemon,
+      required List<PokemonData> pokemon,
+      required User user,
+      required String loadFailed,
+      required bool isFailed}) {
+    return _DashboardState(
+      isLoadingUser: isLoadingUser,
+      isLoadingPokemon: isLoadingPokemon,
+      pokemon: pokemon,
       user: user,
+      loadFailed: loadFailed,
+      isFailed: isFailed,
     );
   }
 }
@@ -192,8 +487,12 @@ const $DashboardState = _$DashboardStateTearOff();
 
 /// @nodoc
 mixin _$DashboardState {
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoadingUser => throw _privateConstructorUsedError;
+  bool get isLoadingPokemon => throw _privateConstructorUsedError;
+  List<PokemonData> get pokemon => throw _privateConstructorUsedError;
   User get user => throw _privateConstructorUsedError;
+  String get loadFailed => throw _privateConstructorUsedError;
+  bool get isFailed => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DashboardStateCopyWith<DashboardState> get copyWith =>
@@ -205,7 +504,13 @@ abstract class $DashboardStateCopyWith<$Res> {
   factory $DashboardStateCopyWith(
           DashboardState value, $Res Function(DashboardState) then) =
       _$DashboardStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, User user});
+  $Res call(
+      {bool isLoadingUser,
+      bool isLoadingPokemon,
+      List<PokemonData> pokemon,
+      User user,
+      String loadFailed,
+      bool isFailed});
 
   $UserCopyWith<$Res> get user;
 }
@@ -221,18 +526,38 @@ class _$DashboardStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? isLoading = freezed,
+    Object? isLoadingUser = freezed,
+    Object? isLoadingPokemon = freezed,
+    Object? pokemon = freezed,
     Object? user = freezed,
+    Object? loadFailed = freezed,
+    Object? isFailed = freezed,
   }) {
     return _then(_value.copyWith(
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      isLoadingUser: isLoadingUser == freezed
+          ? _value.isLoadingUser
+          : isLoadingUser // ignore: cast_nullable_to_non_nullable
               as bool,
+      isLoadingPokemon: isLoadingPokemon == freezed
+          ? _value.isLoadingPokemon
+          : isLoadingPokemon // ignore: cast_nullable_to_non_nullable
+              as bool,
+      pokemon: pokemon == freezed
+          ? _value.pokemon
+          : pokemon // ignore: cast_nullable_to_non_nullable
+              as List<PokemonData>,
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
+      loadFailed: loadFailed == freezed
+          ? _value.loadFailed
+          : loadFailed // ignore: cast_nullable_to_non_nullable
+              as String,
+      isFailed: isFailed == freezed
+          ? _value.isFailed
+          : isFailed // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -245,93 +570,157 @@ class _$DashboardStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $DashBoardStateCopyWith<$Res>
+abstract class _$DashboardStateCopyWith<$Res>
     implements $DashboardStateCopyWith<$Res> {
-  factory $DashBoardStateCopyWith(
-          DashBoardState value, $Res Function(DashBoardState) then) =
-      _$DashBoardStateCopyWithImpl<$Res>;
+  factory _$DashboardStateCopyWith(
+          _DashboardState value, $Res Function(_DashboardState) then) =
+      __$DashboardStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, User user});
+  $Res call(
+      {bool isLoadingUser,
+      bool isLoadingPokemon,
+      List<PokemonData> pokemon,
+      User user,
+      String loadFailed,
+      bool isFailed});
 
   @override
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$DashBoardStateCopyWithImpl<$Res>
+class __$DashboardStateCopyWithImpl<$Res>
     extends _$DashboardStateCopyWithImpl<$Res>
-    implements $DashBoardStateCopyWith<$Res> {
-  _$DashBoardStateCopyWithImpl(
-      DashBoardState _value, $Res Function(DashBoardState) _then)
-      : super(_value, (v) => _then(v as DashBoardState));
+    implements _$DashboardStateCopyWith<$Res> {
+  __$DashboardStateCopyWithImpl(
+      _DashboardState _value, $Res Function(_DashboardState) _then)
+      : super(_value, (v) => _then(v as _DashboardState));
 
   @override
-  DashBoardState get _value => super._value as DashBoardState;
+  _DashboardState get _value => super._value as _DashboardState;
 
   @override
   $Res call({
-    Object? isLoading = freezed,
+    Object? isLoadingUser = freezed,
+    Object? isLoadingPokemon = freezed,
+    Object? pokemon = freezed,
     Object? user = freezed,
+    Object? loadFailed = freezed,
+    Object? isFailed = freezed,
   }) {
-    return _then(DashBoardState(
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+    return _then(_DashboardState(
+      isLoadingUser: isLoadingUser == freezed
+          ? _value.isLoadingUser
+          : isLoadingUser // ignore: cast_nullable_to_non_nullable
               as bool,
+      isLoadingPokemon: isLoadingPokemon == freezed
+          ? _value.isLoadingPokemon
+          : isLoadingPokemon // ignore: cast_nullable_to_non_nullable
+              as bool,
+      pokemon: pokemon == freezed
+          ? _value.pokemon
+          : pokemon // ignore: cast_nullable_to_non_nullable
+              as List<PokemonData>,
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
+      loadFailed: loadFailed == freezed
+          ? _value.loadFailed
+          : loadFailed // ignore: cast_nullable_to_non_nullable
+              as String,
+      isFailed: isFailed == freezed
+          ? _value.isFailed
+          : isFailed // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 
-class _$DashBoardState implements DashBoardState {
-  const _$DashBoardState({required this.isLoading, required this.user});
+class _$_DashboardState implements _DashboardState {
+  const _$_DashboardState(
+      {required this.isLoadingUser,
+      required this.isLoadingPokemon,
+      required this.pokemon,
+      required this.user,
+      required this.loadFailed,
+      required this.isFailed});
 
   @override
-  final bool isLoading;
+  final bool isLoadingUser;
+  @override
+  final bool isLoadingPokemon;
+  @override
+  final List<PokemonData> pokemon;
   @override
   final User user;
+  @override
+  final String loadFailed;
+  @override
+  final bool isFailed;
 
   @override
   String toString() {
-    return 'DashboardState(isLoading: $isLoading, user: $user)';
+    return 'DashboardState(isLoadingUser: $isLoadingUser, isLoadingPokemon: $isLoadingPokemon, pokemon: $pokemon, user: $user, loadFailed: $loadFailed, isFailed: $isFailed)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DashBoardState &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.user, user));
+            other is _DashboardState &&
+            const DeepCollectionEquality()
+                .equals(other.isLoadingUser, isLoadingUser) &&
+            const DeepCollectionEquality()
+                .equals(other.isLoadingPokemon, isLoadingPokemon) &&
+            const DeepCollectionEquality().equals(other.pokemon, pokemon) &&
+            const DeepCollectionEquality().equals(other.user, user) &&
+            const DeepCollectionEquality()
+                .equals(other.loadFailed, loadFailed) &&
+            const DeepCollectionEquality().equals(other.isFailed, isFailed));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(user));
+      const DeepCollectionEquality().hash(isLoadingUser),
+      const DeepCollectionEquality().hash(isLoadingPokemon),
+      const DeepCollectionEquality().hash(pokemon),
+      const DeepCollectionEquality().hash(user),
+      const DeepCollectionEquality().hash(loadFailed),
+      const DeepCollectionEquality().hash(isFailed));
 
   @JsonKey(ignore: true)
   @override
-  $DashBoardStateCopyWith<DashBoardState> get copyWith =>
-      _$DashBoardStateCopyWithImpl<DashBoardState>(this, _$identity);
+  _$DashboardStateCopyWith<_DashboardState> get copyWith =>
+      __$DashboardStateCopyWithImpl<_DashboardState>(this, _$identity);
 }
 
-abstract class DashBoardState implements DashboardState {
-  const factory DashBoardState({required bool isLoading, required User user}) =
-      _$DashBoardState;
+abstract class _DashboardState implements DashboardState {
+  const factory _DashboardState(
+      {required bool isLoadingUser,
+      required bool isLoadingPokemon,
+      required List<PokemonData> pokemon,
+      required User user,
+      required String loadFailed,
+      required bool isFailed}) = _$_DashboardState;
 
   @override
-  bool get isLoading;
+  bool get isLoadingUser;
+  @override
+  bool get isLoadingPokemon;
+  @override
+  List<PokemonData> get pokemon;
   @override
   User get user;
   @override
+  String get loadFailed;
+  @override
+  bool get isFailed;
+  @override
   @JsonKey(ignore: true)
-  $DashBoardStateCopyWith<DashBoardState> get copyWith =>
+  _$DashboardStateCopyWith<_DashboardState> get copyWith =>
       throw _privateConstructorUsedError;
 }

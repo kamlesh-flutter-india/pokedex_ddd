@@ -14,10 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-PokemonDto _$PokemonDtoFromJson(Map<String, dynamic> json) {
-  return _PokemonDto.fromJson(json);
-}
-
 /// @nodoc
 class _$PokemonDtoTearOff {
   const _$PokemonDtoTearOff();
@@ -25,16 +21,20 @@ class _$PokemonDtoTearOff {
   _PokemonDto call(
       {@JsonKey(name: 'id') required String id,
       @JsonKey(name: 'name') required String name,
-      @JsonKey(name: 'imageUrl') required String imageUrl}) {
+      @JsonKey(name: 'imageUrl') required String imageUrl,
+      @JsonKey(name: 'height') required int height,
+      @JsonKey(name: 'weight') required int weight,
+      @JsonKey(name: 'types') required List<String> types,
+      @JsonKey(name: 'stats') required List<PokemonState> stats}) {
     return _PokemonDto(
       id: id,
       name: name,
       imageUrl: imageUrl,
+      height: height,
+      weight: weight,
+      types: types,
+      stats: stats,
     );
-  }
-
-  PokemonDto fromJson(Map<String, Object?> json) {
-    return PokemonDto.fromJson(json);
   }
 }
 
@@ -49,8 +49,15 @@ mixin _$PokemonDto {
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'imageUrl')
   String get imageUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'height')
+  int get height => throw _privateConstructorUsedError;
+  @JsonKey(name: 'weight')
+  int get weight => throw _privateConstructorUsedError;
+  @JsonKey(name: 'types')
+  List<String> get types => throw _privateConstructorUsedError;
+  @JsonKey(name: 'stats')
+  List<PokemonState> get stats => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $PokemonDtoCopyWith<PokemonDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -64,7 +71,11 @@ abstract class $PokemonDtoCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'id') String id,
       @JsonKey(name: 'name') String name,
-      @JsonKey(name: 'imageUrl') String imageUrl});
+      @JsonKey(name: 'imageUrl') String imageUrl,
+      @JsonKey(name: 'height') int height,
+      @JsonKey(name: 'weight') int weight,
+      @JsonKey(name: 'types') List<String> types,
+      @JsonKey(name: 'stats') List<PokemonState> stats});
 }
 
 /// @nodoc
@@ -80,6 +91,10 @@ class _$PokemonDtoCopyWithImpl<$Res> implements $PokemonDtoCopyWith<$Res> {
     Object? id = freezed,
     Object? name = freezed,
     Object? imageUrl = freezed,
+    Object? height = freezed,
+    Object? weight = freezed,
+    Object? types = freezed,
+    Object? stats = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -94,6 +109,22 @@ class _$PokemonDtoCopyWithImpl<$Res> implements $PokemonDtoCopyWith<$Res> {
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+      weight: weight == freezed
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as int,
+      types: types == freezed
+          ? _value.types
+          : types // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      stats: stats == freezed
+          ? _value.stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as List<PokemonState>,
     ));
   }
 }
@@ -107,7 +138,11 @@ abstract class _$PokemonDtoCopyWith<$Res> implements $PokemonDtoCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'id') String id,
       @JsonKey(name: 'name') String name,
-      @JsonKey(name: 'imageUrl') String imageUrl});
+      @JsonKey(name: 'imageUrl') String imageUrl,
+      @JsonKey(name: 'height') int height,
+      @JsonKey(name: 'weight') int weight,
+      @JsonKey(name: 'types') List<String> types,
+      @JsonKey(name: 'stats') List<PokemonState> stats});
 }
 
 /// @nodoc
@@ -125,6 +160,10 @@ class __$PokemonDtoCopyWithImpl<$Res> extends _$PokemonDtoCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? imageUrl = freezed,
+    Object? height = freezed,
+    Object? weight = freezed,
+    Object? types = freezed,
+    Object? stats = freezed,
   }) {
     return _then(_PokemonDto(
       id: id == freezed
@@ -139,21 +178,38 @@ class __$PokemonDtoCopyWithImpl<$Res> extends _$PokemonDtoCopyWithImpl<$Res>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+      weight: weight == freezed
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as int,
+      types: types == freezed
+          ? _value.types
+          : types // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      stats: stats == freezed
+          ? _value.stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as List<PokemonState>,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_PokemonDto extends _PokemonDto {
   const _$_PokemonDto(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'name') required this.name,
-      @JsonKey(name: 'imageUrl') required this.imageUrl})
+      @JsonKey(name: 'imageUrl') required this.imageUrl,
+      @JsonKey(name: 'height') required this.height,
+      @JsonKey(name: 'weight') required this.weight,
+      @JsonKey(name: 'types') required this.types,
+      @JsonKey(name: 'stats') required this.stats})
       : super._();
-
-  factory _$_PokemonDto.fromJson(Map<String, dynamic> json) =>
-      _$$_PokemonDtoFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -164,10 +220,22 @@ class _$_PokemonDto extends _PokemonDto {
   @override
   @JsonKey(name: 'imageUrl')
   final String imageUrl;
+  @override
+  @JsonKey(name: 'height')
+  final int height;
+  @override
+  @JsonKey(name: 'weight')
+  final int weight;
+  @override
+  @JsonKey(name: 'types')
+  final List<String> types;
+  @override
+  @JsonKey(name: 'stats')
+  final List<PokemonState> stats;
 
   @override
   String toString() {
-    return 'PokemonDto(id: $id, name: $name, imageUrl: $imageUrl)';
+    return 'PokemonDto(id: $id, name: $name, imageUrl: $imageUrl, height: $height, weight: $weight, types: $types, stats: $stats)';
   }
 
   @override
@@ -177,7 +245,11 @@ class _$_PokemonDto extends _PokemonDto {
             other is _PokemonDto &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.imageUrl, imageUrl));
+            const DeepCollectionEquality().equals(other.imageUrl, imageUrl) &&
+            const DeepCollectionEquality().equals(other.height, height) &&
+            const DeepCollectionEquality().equals(other.weight, weight) &&
+            const DeepCollectionEquality().equals(other.types, types) &&
+            const DeepCollectionEquality().equals(other.stats, stats));
   }
 
   @override
@@ -185,28 +257,29 @@ class _$_PokemonDto extends _PokemonDto {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(imageUrl));
+      const DeepCollectionEquality().hash(imageUrl),
+      const DeepCollectionEquality().hash(height),
+      const DeepCollectionEquality().hash(weight),
+      const DeepCollectionEquality().hash(types),
+      const DeepCollectionEquality().hash(stats));
 
   @JsonKey(ignore: true)
   @override
   _$PokemonDtoCopyWith<_PokemonDto> get copyWith =>
       __$PokemonDtoCopyWithImpl<_PokemonDto>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_PokemonDtoToJson(this);
-  }
 }
 
 abstract class _PokemonDto extends PokemonDto {
   const factory _PokemonDto(
-      {@JsonKey(name: 'id') required String id,
-      @JsonKey(name: 'name') required String name,
-      @JsonKey(name: 'imageUrl') required String imageUrl}) = _$_PokemonDto;
+          {@JsonKey(name: 'id') required String id,
+          @JsonKey(name: 'name') required String name,
+          @JsonKey(name: 'imageUrl') required String imageUrl,
+          @JsonKey(name: 'height') required int height,
+          @JsonKey(name: 'weight') required int weight,
+          @JsonKey(name: 'types') required List<String> types,
+          @JsonKey(name: 'stats') required List<PokemonState> stats}) =
+      _$_PokemonDto;
   const _PokemonDto._() : super._();
-
-  factory _PokemonDto.fromJson(Map<String, dynamic> json) =
-      _$_PokemonDto.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -217,6 +290,18 @@ abstract class _PokemonDto extends PokemonDto {
   @override
   @JsonKey(name: 'imageUrl')
   String get imageUrl;
+  @override
+  @JsonKey(name: 'height')
+  int get height;
+  @override
+  @JsonKey(name: 'weight')
+  int get weight;
+  @override
+  @JsonKey(name: 'types')
+  List<String> get types;
+  @override
+  @JsonKey(name: 'stats')
+  List<PokemonState> get stats;
   @override
   @JsonKey(ignore: true)
   _$PokemonDtoCopyWith<_PokemonDto> get copyWith =>

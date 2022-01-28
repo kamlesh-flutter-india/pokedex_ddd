@@ -19,11 +19,21 @@ class _$PokemonDataTearOff {
   const _$PokemonDataTearOff();
 
   _PokemonData call(
-      {required String id, required String name, required String imageUrl}) {
+      {required String id,
+      required String name,
+      required String imageUrl,
+      required List<String> types,
+      required double height,
+      required double weight,
+      required List<PokemonState> stats}) {
     return _PokemonData(
       id: id,
       name: name,
       imageUrl: imageUrl,
+      types: types,
+      height: height,
+      weight: weight,
+      stats: stats,
     );
   }
 }
@@ -36,6 +46,10 @@ mixin _$PokemonData {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
+  List<String> get types => throw _privateConstructorUsedError;
+  double get height => throw _privateConstructorUsedError;
+  double get weight => throw _privateConstructorUsedError;
+  List<PokemonState> get stats => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PokemonDataCopyWith<PokemonData> get copyWith =>
@@ -47,7 +61,14 @@ abstract class $PokemonDataCopyWith<$Res> {
   factory $PokemonDataCopyWith(
           PokemonData value, $Res Function(PokemonData) then) =
       _$PokemonDataCopyWithImpl<$Res>;
-  $Res call({String id, String name, String imageUrl});
+  $Res call(
+      {String id,
+      String name,
+      String imageUrl,
+      List<String> types,
+      double height,
+      double weight,
+      List<PokemonState> stats});
 }
 
 /// @nodoc
@@ -63,6 +84,10 @@ class _$PokemonDataCopyWithImpl<$Res> implements $PokemonDataCopyWith<$Res> {
     Object? id = freezed,
     Object? name = freezed,
     Object? imageUrl = freezed,
+    Object? types = freezed,
+    Object? height = freezed,
+    Object? weight = freezed,
+    Object? stats = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -77,6 +102,22 @@ class _$PokemonDataCopyWithImpl<$Res> implements $PokemonDataCopyWith<$Res> {
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      types: types == freezed
+          ? _value.types
+          : types // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      weight: weight == freezed
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as double,
+      stats: stats == freezed
+          ? _value.stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as List<PokemonState>,
     ));
   }
 }
@@ -88,7 +129,14 @@ abstract class _$PokemonDataCopyWith<$Res>
           _PokemonData value, $Res Function(_PokemonData) then) =
       __$PokemonDataCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String name, String imageUrl});
+  $Res call(
+      {String id,
+      String name,
+      String imageUrl,
+      List<String> types,
+      double height,
+      double weight,
+      List<PokemonState> stats});
 }
 
 /// @nodoc
@@ -106,6 +154,10 @@ class __$PokemonDataCopyWithImpl<$Res> extends _$PokemonDataCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? imageUrl = freezed,
+    Object? types = freezed,
+    Object? height = freezed,
+    Object? weight = freezed,
+    Object? stats = freezed,
   }) {
     return _then(_PokemonData(
       id: id == freezed
@@ -120,6 +172,22 @@ class __$PokemonDataCopyWithImpl<$Res> extends _$PokemonDataCopyWithImpl<$Res>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      types: types == freezed
+          ? _value.types
+          : types // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      height: height == freezed
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      weight: weight == freezed
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as double,
+      stats: stats == freezed
+          ? _value.stats
+          : stats // ignore: cast_nullable_to_non_nullable
+              as List<PokemonState>,
     ));
   }
 }
@@ -128,7 +196,13 @@ class __$PokemonDataCopyWithImpl<$Res> extends _$PokemonDataCopyWithImpl<$Res>
 
 class _$_PokemonData extends _PokemonData {
   const _$_PokemonData(
-      {required this.id, required this.name, required this.imageUrl})
+      {required this.id,
+      required this.name,
+      required this.imageUrl,
+      required this.types,
+      required this.height,
+      required this.weight,
+      required this.stats})
       : super._();
 
   @override
@@ -137,10 +211,18 @@ class _$_PokemonData extends _PokemonData {
   final String name;
   @override
   final String imageUrl;
+  @override
+  final List<String> types;
+  @override
+  final double height;
+  @override
+  final double weight;
+  @override
+  final List<PokemonState> stats;
 
   @override
   String toString() {
-    return 'PokemonData(id: $id, name: $name, imageUrl: $imageUrl)';
+    return 'PokemonData(id: $id, name: $name, imageUrl: $imageUrl, types: $types, height: $height, weight: $weight, stats: $stats)';
   }
 
   @override
@@ -150,7 +232,11 @@ class _$_PokemonData extends _PokemonData {
             other is _PokemonData &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.imageUrl, imageUrl));
+            const DeepCollectionEquality().equals(other.imageUrl, imageUrl) &&
+            const DeepCollectionEquality().equals(other.types, types) &&
+            const DeepCollectionEquality().equals(other.height, height) &&
+            const DeepCollectionEquality().equals(other.weight, weight) &&
+            const DeepCollectionEquality().equals(other.stats, stats));
   }
 
   @override
@@ -158,7 +244,11 @@ class _$_PokemonData extends _PokemonData {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(imageUrl));
+      const DeepCollectionEquality().hash(imageUrl),
+      const DeepCollectionEquality().hash(types),
+      const DeepCollectionEquality().hash(height),
+      const DeepCollectionEquality().hash(weight),
+      const DeepCollectionEquality().hash(stats));
 
   @JsonKey(ignore: true)
   @override
@@ -170,7 +260,11 @@ abstract class _PokemonData extends PokemonData {
   const factory _PokemonData(
       {required String id,
       required String name,
-      required String imageUrl}) = _$_PokemonData;
+      required String imageUrl,
+      required List<String> types,
+      required double height,
+      required double weight,
+      required List<PokemonState> stats}) = _$_PokemonData;
   const _PokemonData._() : super._();
 
   @override
@@ -179,6 +273,14 @@ abstract class _PokemonData extends PokemonData {
   String get name;
   @override
   String get imageUrl;
+  @override
+  List<String> get types;
+  @override
+  double get height;
+  @override
+  double get weight;
+  @override
+  List<PokemonState> get stats;
   @override
   @JsonKey(ignore: true)
   _$PokemonDataCopyWith<_PokemonData> get copyWith =>

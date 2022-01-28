@@ -9,15 +9,16 @@ import 'package:firebase_auth/firebase_auth.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'Application/auth_bloc/auth_bloc.dart' as _i13;
-import 'Application/dashboard_bloc/dashboard_bloc.dart' as _i14;
+import 'Application/auth_bloc/auth_bloc.dart' as _i14;
+import 'Application/dashboard_bloc/dashboard_bloc.dart' as _i15;
 import 'Application/login_register_bloc/login_bloc.dart' as _i11;
-import 'Application/registration_bloc/registration_form_bloc.dart' as _i12;
+import 'Application/pokemon_details_bloc/pokemon_details_bloc.dart' as _i12;
+import 'Application/registration_bloc/registration_form_bloc.dart' as _i13;
 import 'Domain/core/iauth_facade.dart' as _i5;
 import 'Domain/pokemon/i_pokemon_Repository.dart' as _i7;
 import 'Domain/registration/i_user_repository.dart' as _i9;
 import 'Infrastructure/auth/firebase_auth_facade.dart' as _i6;
-import 'Infrastructure/core/firebase_injectable_module.dart' as _i15;
+import 'Infrastructure/core/firebase_injectable_module.dart' as _i16;
 import 'Infrastructure/firebase/firebase_queries.dart' as _i10;
 import 'Infrastructure/pokemon/pokemon_repository.dart'
     as _i8; // ignore_for_file: unnecessary_lambdas
@@ -38,12 +39,14 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i9.IUserRepository>(
       () => _i10.FirebaseQueries(get<_i4.FirebaseFirestore>()));
   gh.factory<_i11.LoginBloc>(() => _i11.LoginBloc(get<_i5.IAuthFacade>()));
-  gh.factory<_i12.RegistrationFormBloc>(
-      () => _i12.RegistrationFormBloc(get<_i5.IAuthFacade>()));
-  gh.factory<_i13.AuthBloc>(() => _i13.AuthBloc(get<_i5.IAuthFacade>()));
-  gh.factory<_i14.DashboardBloc>(() => _i14.DashboardBloc(
+  gh.factory<_i12.PokemonDetailsBloc>(
+      () => _i12.PokemonDetailsBloc(get<_i7.IPokemonRepository>()));
+  gh.factory<_i13.RegistrationFormBloc>(
+      () => _i13.RegistrationFormBloc(get<_i5.IAuthFacade>()));
+  gh.factory<_i14.AuthBloc>(() => _i14.AuthBloc(get<_i5.IAuthFacade>()));
+  gh.factory<_i15.DashboardBloc>(() => _i15.DashboardBloc(
       get<_i9.IUserRepository>(), get<_i7.IPokemonRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i15.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i16.FirebaseInjectableModule {}

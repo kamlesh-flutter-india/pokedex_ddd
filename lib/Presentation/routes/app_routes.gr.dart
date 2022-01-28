@@ -29,6 +29,13 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const HomeScreenPage());
     },
+    PokemonDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<PokemonDetailsRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child:
+              PokemonDetailsPage(key: args.key, pokemonData: args.pokemonData));
+    },
     SplashScreenRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const SplashScreenPage());
@@ -40,6 +47,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(SignInRoute.name, path: '/sign-in-page'),
         RouteConfig(RegistrationRoute.name, path: '/registration-page'),
         RouteConfig(HomeScreenRoute.name, path: '/home-screen-page'),
+        RouteConfig(PokemonDetailsRoute.name, path: '/pokemon-details-page'),
         RouteConfig(SplashScreenRoute.name, path: '/')
       ];
 }
@@ -68,6 +76,30 @@ class HomeScreenRoute extends PageRouteInfo<void> {
       : super(HomeScreenRoute.name, path: '/home-screen-page');
 
   static const String name = 'HomeScreenRoute';
+}
+
+/// generated route for
+/// [PokemonDetailsPage]
+class PokemonDetailsRoute extends PageRouteInfo<PokemonDetailsRouteArgs> {
+  PokemonDetailsRoute({Key? key, required PokemonData pokemonData})
+      : super(PokemonDetailsRoute.name,
+            path: '/pokemon-details-page',
+            args: PokemonDetailsRouteArgs(key: key, pokemonData: pokemonData));
+
+  static const String name = 'PokemonDetailsRoute';
+}
+
+class PokemonDetailsRouteArgs {
+  const PokemonDetailsRouteArgs({this.key, required this.pokemonData});
+
+  final Key? key;
+
+  final PokemonData pokemonData;
+
+  @override
+  String toString() {
+    return 'PokemonDetailsRouteArgs{key: $key, pokemonData: $pokemonData}';
+  }
 }
 
 /// generated route for
