@@ -64,7 +64,7 @@ class TabStat extends StatelessWidget {
                 percentage:
                     (double.parse(pokemonData.stats[index].base_state) / 100),
                 backgroundColor: Colors.grey,
-                progressBarColor: Colors.red,
+                progressBarColor: Colors.purple,
               ),
             )
           ],

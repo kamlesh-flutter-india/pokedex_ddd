@@ -16,6 +16,9 @@ class GridviewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<DashboardBloc, DashboardState>(
+      buildWhen: (previous, current) {
+        return previous.isLoadingPokemon != current.isLoadingPokemon;
+      },
       builder: (context, state) {
         return state.isLoadingPokemon
             ? const Center(child: CircularProgressIndicator())
@@ -39,13 +42,16 @@ class GridviewItem extends StatelessWidget {
                             pokemonData: state.pokemon[index]));
                       },
                       child: Card(
+                        elevation: 10,
                         color: Colors.primaries[
                                 _random.nextInt(Colors.primaries.length)]
                             [_random.nextInt(9) * 100],
                         child: GridTile(
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
@@ -61,7 +67,7 @@ class GridviewItem extends StatelessWidget {
                                   ...state.pokemon[index].types.map((e) =>
                                       Container(
                                           margin: const EdgeInsets.symmetric(
-                                              vertical: 2),
+                                              horizontal: 5, vertical: 2),
                                           width: 60,
                                           decoration: BoxDecoration(
                                             color: Colors.white24,
@@ -80,11 +86,13 @@ class GridviewItem extends StatelessWidget {
                               ),
                               Expanded(
                                 child: CachedNetworkImage(
+                                  height: double.infinity,
+                                  width: double.infinity,
                                   placeholder: (context, url) => Container(
                                     color: Colors.transparent,
                                   ),
                                   imageUrl: state.pokemon[index].imageUrl,
-                                  fit: BoxFit.contain,
+                                  fit: BoxFit.scaleDown,
                                 ),
                               ),
                             ],

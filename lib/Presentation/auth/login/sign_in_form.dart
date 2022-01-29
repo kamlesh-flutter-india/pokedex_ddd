@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex_ddd/Application/auth_bloc/auth_bloc.dart';
 import 'package:pokedex_ddd/Application/login_register_bloc/login_bloc.dart';
-import 'package:pokedex_ddd/Domain/auth/enum_validation.dart';
 import 'package:pokedex_ddd/Presentation/core/loader.dart';
 import 'package:pokedex_ddd/Presentation/routes/app_routes.dart';
-import 'package:provider/src/provider.dart';
 
 class SignInForm extends StatelessWidget {
   SignInForm({Key? key}) : super(key: key);
@@ -26,11 +24,6 @@ class SignInForm extends StatelessWidget {
                             serverError: (_) => "Server Error",
                             invalideEmailOrPassword: (_) =>
                                 "Invalid Email or Password")))), (r) {
-                  // if (state.authType == AuthType.register) {
-                  //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                  //       content: Text("You are now Registered")));
-                  //   _formKey.currentState!.reset();
-                  // } else {
                   AutoRouter.of(context)
                       .pushNamed(const HomeScreenRoute().path);
                   // }
@@ -59,7 +52,7 @@ class SignInForm extends StatelessWidget {
                     ),
                   ),
                   const Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 15, 20, 8),
+                    padding: EdgeInsets.fromLTRB(20, 15, 20, 8),
                     child: Text(
                       'Login',
                       style: TextStyle(
@@ -165,12 +158,7 @@ class SignInForm extends StatelessWidget {
                                     child: const Text("Login")),
                               ),
                             ),
-                            // if (state.isSubmitting) ...[
-                            //   const SizedBox(
-                            //     height: 10,
-                            //   ),
-                            //   const LinearProgressIndicator(),
-                            // ],
+                          
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [

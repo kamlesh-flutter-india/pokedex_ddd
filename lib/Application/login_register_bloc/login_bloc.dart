@@ -30,19 +30,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           authFailureSccess: none(),
         );
       },
-      registerWithEmailAndPasswordPressd: (value) async* {
-        // Either<AuthFailure, Unit> failurOrSuccess;
-        // yield state.copyWith(
-        //   isSubmitting: true,
-        //   authFailureSccess: none(),
-        // );
-        // failurOrSuccess = await _authFacade.registerWithEmailAndPassword(user: );
-        // yield state.copyWith(
-        //   authFailureSccess: optionOf(failurOrSuccess),
-        //   isSubmitting: false,
-        //   showErrorMessage: true,
-        // );
-      },
       signInWithEmailAndPasswordPressd: (value) async* {
         Either<AuthFailure, Unit> failurOrSuccess;
 
@@ -56,18 +43,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           authFailureSccess: optionOf(failurOrSuccess),
           isSubmitting: false,
           showErrorMessage: true,
-        );
-      },
-      ageChanged: (AgeChanged value) async* {
-        yield state.copyWith(
-          age: value.age,
-          authFailureSccess: none(),
-        );
-      },
-      nameChanged: (NameChanged value) async* {
-        yield state.copyWith(
-          name: value.name,
-          authFailureSccess: none(),
         );
       },
     );

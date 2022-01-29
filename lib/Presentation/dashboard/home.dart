@@ -23,16 +23,11 @@ class HomeScreenPage extends StatelessWidget {
               ..add(const DashboardEvent.loadPokemon());
           },
         ),
-        BlocProvider<AuthBloc>(
-          create: (context) {
-            return getIt<AuthBloc>();
-          },
-        ),
-
-        BlocProvider(
-          create: (context) {
-          return getIt<PokemonDetailsBloc>();
-        },),
+        //     // BlocProvider<AuthBloc>(
+        //     //   create: (context) {
+        //     //     return getIt<AuthBloc>();
+        //     //   },
+        //     // ),
       ],
       child: Scaffold(
         drawer: Drawer(
@@ -40,7 +35,11 @@ class HomeScreenPage extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: [
               BlocBuilder<DashboardBloc, DashboardState>(
+                buildWhen: (previous, current) {
+                  return previous.isLoadingUser != current.isLoadingUser;
+                },
                 builder: (context, state) {
+                  print(state.isLoadingUser.toString());
                   return state.isLoadingUser
                       ? const LinearProgressIndicator()
                       : UserAccountsDrawerHeader(

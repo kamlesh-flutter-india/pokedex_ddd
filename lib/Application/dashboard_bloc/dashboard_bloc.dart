@@ -53,7 +53,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
         yield state.copyWith(isLoadingPokemon: true);
         List<PokemonData> pokemons;
         try {
-          pokemons = await _iPokemonRepository.getPokemon(limit: 10, offset: 1);
+          pokemons = await _iPokemonRepository.getPokemon(limit: 25, offset: 1);
           //print(pokemons);
           yield state.copyWith(isLoadingPokemon: false, pokemon: pokemons);
         } catch (e) {

@@ -28,9 +28,7 @@ class PokemonDetailsPage extends StatelessWidget {
           return DefaultTabController(
             length: 4,
             child: Scaffold(
-              backgroundColor:
-                  Colors.primaries[_random.nextInt(Colors.primaries.length)]
-                      [_random.nextInt(9) * 100],
+              backgroundColor: Colors.purple,
               appBar: AppBar(
                 actions: const [
                   Padding(
@@ -45,7 +43,7 @@ class PokemonDetailsPage extends StatelessWidget {
                 children: [
                   Positioned(
                       top: MediaQuery.of(context).size.height * 0.01,
-                      left: 1,
+                      left: 10,
                       child: Container(
                           width: MediaQuery.of(context).size.width,
                           child: Text(
@@ -55,7 +53,7 @@ class PokemonDetailsPage extends StatelessWidget {
                           ))),
                   Positioned(
                     top: MediaQuery.of(context).size.height * 0.1,
-                    left: 1,
+                    left: 10,
                     child: SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: Row(

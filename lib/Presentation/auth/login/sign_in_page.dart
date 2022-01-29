@@ -11,12 +11,13 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: const Color(0xff251F34),
-      body: BlocProvider(
-        create: (context) {
-          return getIt<LoginBloc>();
-        },
-        child: SignInForm(),
-      ),
+      // body: BlocProvider(
+      //   create: (context) {
+      //     return getIt<LoginBloc>();
+      //   },
+      //   child: SignInForm(),
+      // ),
+      body: SignInForm(),
     );
   }
 }
