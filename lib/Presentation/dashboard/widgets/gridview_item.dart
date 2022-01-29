@@ -54,33 +54,21 @@ class GridviewItem extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding:
+                                        const EdgeInsets.fromLTRB(8, 8, 8, 0),
                                     child: Text(
                                       state.pokemon[index].name,
                                       style: const TextStyle(
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ),
-                                  Container(
-                                    height: 10,
-                                  ),
                                   ...state.pokemon[index].types.map((e) =>
                                       Container(
                                           margin: const EdgeInsets.symmetric(
-                                              horizontal: 5, vertical: 2),
-                                          width: 60,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white24,
-                                            border: Border.all(
-                                                color: Colors.white10),
-                                            borderRadius:
-                                                const BorderRadius.all(
-                                                    Radius.circular(20)),
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              e,
-                                            ),
+                                              horizontal: 5),
+                                          //width: 60,
+                                          child: Chip(
+                                            label: Text(e),
                                           ))),
                                 ],
                               ),
