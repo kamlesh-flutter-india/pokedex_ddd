@@ -22,21 +22,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
   @override
   Stream<DashboardState> mapEventToState(DashboardEvent event) async* {
-    // yield* event.map(started: (value) async* {
-    //   yield state.copyWith(isLoading: true);
-    //   Either<UserFailure, User> userOption =
-    //       await _iUserRepository.getUserDetails();
-    //  yield userOption.map((r) => state.copyWith(isLoading: false,
-    //  user: r));
-    // });
-
-    // yield* event.map(started: (e) async* {
-    //   User user;
-    //   yield state.copyWith(isLoading: true);
-    //   user = await _iUserRepository.getUserDetails();
-    //   var pokemon = await _iPokemonRepository.getPokemon();
-    //   yield state.copyWith(isLoading: false, user: user);
-    // });
+   
 
     yield* event.map(
       loadUser: (e) async* {

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex_ddd/Application/auth_bloc/auth_bloc.dart';
+import 'package:pokedex_ddd/Application/dashboard_bloc/dashboard_bloc.dart';
 import 'package:pokedex_ddd/Application/login_register_bloc/login_bloc.dart';
 import 'package:pokedex_ddd/Presentation/core/loader.dart';
 import 'package:pokedex_ddd/Presentation/routes/app_routes.dart';
@@ -30,6 +31,9 @@ class SignInForm extends StatelessWidget {
                   context
                       .read<AuthBloc>()
                       .add(const AuthEvent.checkauthenticated());
+                  // context.read<DashboardBloc>()
+                  //   ..add(DashboardEvent.loadUser())
+                  //   ..add(DashboardEvent.loadPokemon());
                 }));
       },
       buildWhen: (previous, current) {
@@ -158,7 +162,6 @@ class SignInForm extends StatelessWidget {
                                     child: const Text("Login")),
                               ),
                             ),
-                          
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [

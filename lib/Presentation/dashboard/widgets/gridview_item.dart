@@ -40,6 +40,8 @@ class GridviewItem extends StatelessWidget {
                         //     PokemonDetailsEvent.getPokemonDetails(index++));
                         AutoRouter.of(context).push(PokemonDetailsRoute(
                             pokemonData: state.pokemon[index]));
+                        
+                        
                       },
                       child: Card(
                         elevation: 10,

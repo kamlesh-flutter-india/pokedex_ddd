@@ -17,20 +17,23 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) =>
+          create: (context) =>
               getIt<AuthBloc>()..add(const AuthEvent.checkauthenticated()),
         ),
         BlocProvider(
-          create: (_) => getIt<LoginBloc>(),
+          create: (context) => getIt<LoginBloc>(),
         ),
         BlocProvider(
-          create: (_) => getIt<RegistrationFormBloc>(),
+          create: (context) => getIt<RegistrationFormBloc>(),
         ),
         BlocProvider(
-          create: (_) => getIt<PokemonDetailsBloc>(),
+          create: (context) => getIt<PokemonDetailsBloc>(),
         ),
         BlocProvider<DashboardBloc>(
-          create: (_) => getIt<DashboardBloc>(),
+          create: (context) => getIt<DashboardBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<PokemonDetailsBloc>(),
         ),
       ],
       child: MaterialApp.router(

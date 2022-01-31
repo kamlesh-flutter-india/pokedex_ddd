@@ -14,21 +14,10 @@ class HomeScreenPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<DashboardBloc>(
-          create: (context) {
-            return getIt<DashboardBloc>()
-              ..add(const DashboardEvent.loadUser())
-              ..add(const DashboardEvent.loadPokemon());
-          },
-        ),
-        //     // BlocProvider<AuthBloc>(
-        //     //   create: (context) {
-        //     //     return getIt<AuthBloc>();
-        //     //   },
-        //     // ),
-      ],
+    return BlocProvider(
+      create: (context) => getIt<DashboardBloc>()
+        ..add(const DashboardEvent.loadUser())
+        ..add(const DashboardEvent.loadPokemon()),
       child: Scaffold(
         drawer: Drawer(
           child: ListView(
@@ -39,7 +28,6 @@ class HomeScreenPage extends StatelessWidget {
                   return previous.isLoadingUser != current.isLoadingUser;
                 },
                 builder: (context, state) {
-                  print(state.isLoadingUser.toString());
                   return state.isLoadingUser
                       ? const LinearProgressIndicator()
                       : UserAccountsDrawerHeader(

@@ -62,7 +62,7 @@ class TabStat extends StatelessWidget {
             Expanded(
               child: GFProgressBar(
                 percentage:
-                    (double.parse(pokemonData.stats[index].base_state) / 100),
+                    (double.parse(pokemonData.stats[index].base_state) / 120),
                 backgroundColor: Colors.grey,
                 progressBarColor: Colors.purple,
               ),
