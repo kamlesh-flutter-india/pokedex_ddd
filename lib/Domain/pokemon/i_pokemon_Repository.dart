@@ -1,7 +1,6 @@
 import 'package:pokedex_ddd/Domain/pokemon/pokemon_data.dart';
 import 'package:pokedex_ddd/Domain/pokemon/pokemon_details.dart';
 
-import 'pokemon_evolution_chain.dart';
 
 abstract class IPokemonRepository {
   Future<List<PokemonData>> getPokemon(

@@ -13,5 +13,5 @@ abstract class PokemonDetails with _$PokemonDetails {
   }) = _PokemonDetails;
 
   factory PokemonDetails.empty() =>
-      PokemonDetails( eggGroup: [], color: "",genera: "");
+     const PokemonDetails( eggGroup: [], color: "",genera: "");
 }

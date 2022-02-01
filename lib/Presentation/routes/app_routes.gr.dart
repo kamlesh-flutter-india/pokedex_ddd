@@ -33,8 +33,8 @@ class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<PokemonDetailsRouteArgs>();
       return MaterialPageX<dynamic>(
           routeData: routeData,
-          child:
-              PokemonDetailsPage(key: args.key, pokemonData: args.pokemonData));
+          child: PokemonDetailsPage(
+              key: args.key, color: args.color, pokemonData: args.pokemonData));
     },
     SplashScreenRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -81,24 +81,29 @@ class HomeScreenRoute extends PageRouteInfo<void> {
 /// generated route for
 /// [PokemonDetailsPage]
 class PokemonDetailsRoute extends PageRouteInfo<PokemonDetailsRouteArgs> {
-  PokemonDetailsRoute({Key? key, required PokemonData pokemonData})
+  PokemonDetailsRoute(
+      {Key? key, required Color color, required PokemonData pokemonData})
       : super(PokemonDetailsRoute.name,
             path: '/pokemon-details-page',
-            args: PokemonDetailsRouteArgs(key: key, pokemonData: pokemonData));
+            args: PokemonDetailsRouteArgs(
+                key: key, color: color, pokemonData: pokemonData));
 
   static const String name = 'PokemonDetailsRoute';
 }
 
 class PokemonDetailsRouteArgs {
-  const PokemonDetailsRouteArgs({this.key, required this.pokemonData});
+  const PokemonDetailsRouteArgs(
+      {this.key, required this.color, required this.pokemonData});
 
   final Key? key;
+
+  final Color color;
 
   final PokemonData pokemonData;
 
   @override
   String toString() {
-    return 'PokemonDetailsRouteArgs{key: $key, pokemonData: $pokemonData}';
+    return 'PokemonDetailsRouteArgs{key: $key, color: $color, pokemonData: $pokemonData}';
   }
 }
 

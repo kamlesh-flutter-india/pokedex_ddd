@@ -12,6 +12,6 @@ abstract class PokemonEvolutionChain with _$PokemonEvolutionChain {
   }) = _PokemonEvolutionChain;
 
   factory PokemonEvolutionChain.empty() {
-    return PokemonEvolutionChain(minLevel: "", evolutes_to: "", id: 0);
+    return const PokemonEvolutionChain(minLevel: "", evolutes_to: "", id: 0);
   }
 }

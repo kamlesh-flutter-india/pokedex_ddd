@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex_ddd/Application/auth_bloc/auth_bloc.dart';
-import 'package:pokedex_ddd/Application/dashboard_bloc/dashboard_bloc.dart';
-import 'package:pokedex_ddd/Application/login_register_bloc/login_bloc.dart';
-import 'package:pokedex_ddd/Application/pokemon_details_bloc/pokemon_details_bloc.dart';
-import 'package:pokedex_ddd/Application/registration_bloc/registration_form_bloc.dart';
+import 'package:pokedex_ddd/Application/auth/auth_bloc.dart';
+import 'package:pokedex_ddd/Application/login/login_bloc.dart';
+import 'package:pokedex_ddd/Application/pokemon/pokemon_bloc.dart';
+import 'package:pokedex_ddd/Application/pokemon_details/pokemon_details_bloc.dart';
+import 'package:pokedex_ddd/Application/registration/registration_form_bloc.dart';
 import 'package:pokedex_ddd/Presentation/routes/app_routes.dart' as app_router;
 import 'package:pokedex_ddd/injection.dart';
 
@@ -29,8 +29,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => getIt<PokemonDetailsBloc>(),
         ),
-        BlocProvider<DashboardBloc>(
-          create: (context) => getIt<DashboardBloc>(),
+        BlocProvider<PokemonBloc>(
+          create: (context) => getIt<PokemonBloc>(),
         ),
         BlocProvider(
           create: (context) => getIt<PokemonDetailsBloc>(),

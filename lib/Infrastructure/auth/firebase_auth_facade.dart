@@ -6,7 +6,6 @@ import 'package:pokedex_ddd/Domain/auth/auth_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:pokedex_ddd/Domain/core/iauth_facade.dart';
 import 'package:pokedex_ddd/Infrastructure/auth/user_dto.dart';
-import 'package:pokedex_ddd/Infrastructure/core/firestore_helper.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {

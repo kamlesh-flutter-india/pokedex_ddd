@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pokedex_ddd/Domain/auth/user.dart';
 

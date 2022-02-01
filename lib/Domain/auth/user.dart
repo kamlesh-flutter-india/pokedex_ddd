@@ -13,7 +13,7 @@ abstract class User implements _$User {
     required String password,
   }) = _User;
 
-  factory User.empty() => User(id: "", name: "", email: "", age: "",password: "");
+  factory User.empty() => const User(id: "", name: "", email: "", age: "",password: "");
 
   
 }

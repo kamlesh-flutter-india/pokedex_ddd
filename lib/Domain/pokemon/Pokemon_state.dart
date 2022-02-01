@@ -11,6 +11,6 @@ abstract class PokemonState with _$PokemonState {
   }) = _PokemonState;
 
   factory PokemonState.empty() {
-    return PokemonState(base_state: "", name: "");
+    return const PokemonState(base_state: "", name: "");
   }
 }

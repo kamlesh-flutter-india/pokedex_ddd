@@ -18,7 +18,7 @@ abstract class PokemonData with _$PokemonData {
   }) = _PokemonData;
 
   factory PokemonData.empty() {
-    return PokemonData(id: "", name: "",imageUrl: "",types: [],height: 0.00,weight: 0.00,stats: []);
+    return const PokemonData(id: "", name: "",imageUrl: "",types: [],height: 0.00,weight: 0.00,stats: []);
   }
 }
 
