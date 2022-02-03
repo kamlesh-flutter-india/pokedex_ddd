@@ -28,7 +28,7 @@ class SignInForm extends StatelessWidget {
                             invalideEmailOrPassword: (_) =>
                                 "Invalid Email or Password")))), (r) {
                   AutoRouter.of(context)
-                      .pushNamed(const HomeScreenRoute().path);
+                      .replaceNamed(const HomeScreenRoute().path);
                   // }
                   context
                       .read<AuthBloc>()
@@ -113,7 +113,7 @@ class SignInForm extends StatelessWidget {
                                       .read<LoginBloc>()
                                       .add(LoginEvent.passwordChanged(value));
                                 },
-                                icon:const Icon(Icons.password),
+                                icon: const Icon(Icons.password),
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return "Please enter valid password";
