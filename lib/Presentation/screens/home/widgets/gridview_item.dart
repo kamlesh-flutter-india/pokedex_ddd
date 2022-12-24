@@ -1,11 +1,11 @@
 import 'dart:math';
 
-import 'package:auto_route/auto_route.dart';
+// import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex_ddd/Application/pokemon/pokemon_bloc.dart';
-import 'package:pokedex_ddd/Presentation/routes/app_routes.dart';
+import 'package:pokedex_ddd/Presentation/screens/pokemon_details/pokemon_details.dart';
 
 class GridviewItem extends StatelessWidget {
   GridviewItem({Key? key}) : super(key: key);
@@ -24,28 +24,33 @@ class GridviewItem extends StatelessWidget {
       builder: (context, state) {
         return state.isLoadingPokemon
             ? const Center(child: CircularProgressIndicator())
-            : GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 1.4,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                ),
-                itemCount: state.pokemon.length,
-                itemBuilder: (context, index) {
-                  //print(state.pokemon[index].imageUrl);
-                  return ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(15)),
-                    child: GestureDetector(
+            : Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount:  2,
+                    childAspectRatio: 1.4,
+                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 5,
+                  ),
+                  itemCount: state.pokemon.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
                       onTap: () {
-                        // context.read<PokemonDetailsBloc>().add(
-                        //     PokemonDetailsEvent.getPokemonDetails(index++));
-                        AutoRouter.of(context).push(PokemonDetailsRoute(
-                            pokemonData: state.pokemon[index],
-                            color: colors[index]));
+                        Navigator.pushNamed(context, PokemonDetailsPage.route,
+                            arguments: {
+                              "color": colors[index],
+                              "pokemonData": state.pokemon[index],
+                            });
+                        // AutoRouter.of(context).push(PokemonDetailsRoute(
+                        //     pokemonData: state.pokemon[index],
+                        //     color: colors[index]));
                       },
                       child: Card(
-                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        elevation: 15,
                         color: colors[index],
                         child: GridTile(
                           child: Row(
@@ -88,9 +93,9 @@ class GridviewItem extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               );
       },
       listener: (context, state) {

@@ -7,6 +7,7 @@ part 'pokemon_state_dto.freezed.dart';
 abstract class PokemonStateDto implements _$PokemonStateDto {
   const PokemonStateDto._();
   const factory PokemonStateDto({
+    // ignore: invalid_annotation_target, non_constant_identifier_names
     @JsonKey(name: 'base_state') required int base_state,
     @JsonKey(name: 'name') required String name,
   }) = _PokemonStateDto;

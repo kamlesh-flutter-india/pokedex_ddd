@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:pokedex_ddd/Domain/pokemon/i_pokemon_Repository.dart';
+import 'package:pokedex_ddd/Domain/pokemon/i_pokemon_repository.dart';
 import 'package:pokedex_ddd/Domain/pokemon/pokemon_data.dart';
 import 'package:pokedex_ddd/Domain/pokemon/pokemon_details.dart';
 

@@ -15,7 +15,7 @@ import 'Application/pokemon/pokemon_bloc.dart' as _i12;
 import 'Application/pokemon_details/pokemon_details_bloc.dart' as _i13;
 import 'Application/registration/registration_form_bloc.dart' as _i14;
 import 'Domain/core/iauth_facade.dart' as _i5;
-import 'Domain/pokemon/i_pokemon_Repository.dart' as _i7;
+import 'Domain/pokemon/i_pokemon_repository.dart' as _i7;
 import 'Domain/registration/i_user_repository.dart' as _i9;
 import 'Infrastructure/auth/firebase_auth_facade.dart' as _i6;
 import 'Infrastructure/core/firebase_injectable_module.dart' as _i16;

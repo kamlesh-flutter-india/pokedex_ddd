@@ -10,22 +10,16 @@ class TabStat extends StatelessWidget {
     switch (name) {
       case 'hp':
         return "HP";
-        break;
       case 'speed':
         return 'Speed';
-        break;
       case 'special-defense':
         return 'Sp. Def.';
-        break;
       case 'special-attack':
         return 'Sp. Atk.';
-        break;
       case 'defense':
         return 'Defense';
-        break;
       case 'attack':
         return 'Attack';
-        break;
     }
     return "Other";
   }

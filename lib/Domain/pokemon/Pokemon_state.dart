@@ -6,6 +6,7 @@ part 'Pokemon_state.freezed.dart';
 abstract class PokemonState with _$PokemonState {
   const PokemonState._();
   const factory PokemonState({
+    // ignore: non_constant_identifier_names
     required String base_state,
     required String name,
   }) = _PokemonState;

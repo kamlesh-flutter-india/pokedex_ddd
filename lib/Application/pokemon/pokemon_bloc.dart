@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pokedex_ddd/Domain/auth/user.dart';
-import 'package:pokedex_ddd/Domain/pokemon/i_pokemon_Repository.dart';
+import 'package:pokedex_ddd/Domain/pokemon/i_pokemon_repository.dart';
 import 'package:pokedex_ddd/Domain/pokemon/pokemon_data.dart';
 import 'package:pokedex_ddd/Domain/registration/i_user_repository.dart';
 
@@ -24,6 +24,8 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
         yield state.copyWith(isLoadingUser: true);
         try {
           user = await _iUserRepository.getUserDetails();
+
+          print(user);
           yield state.copyWith(isLoadingUser: false, user: user);
         } catch (e) {
           yield state.copyWith(isFailed: true, loadFailed: e.toString());

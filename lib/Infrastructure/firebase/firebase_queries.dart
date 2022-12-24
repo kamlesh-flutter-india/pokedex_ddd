@@ -16,6 +16,8 @@ class FirebaseQueries implements IUserRepository {
     final userDoc = await _firebaseFirestore.userDocument();
     //  final DocumentSnapshot docs = await userDoc.get();
     //print(userDoc.get());
+
+    print(await userDoc.get().then((value) => value.data()));
     return UserDto.fromFirestore(
             await userDoc.get() as DocumentSnapshot<Map<String, dynamic>>)
         .toDomain();

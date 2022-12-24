@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:injectable/injectable.dart';
-import 'package:pokedex_ddd/Domain/pokemon/i_pokemon_Repository.dart';
+import 'package:pokedex_ddd/Domain/pokemon/i_pokemon_repository.dart';
 import 'package:pokedex_ddd/Domain/pokemon/pokemon_data.dart';
 import 'package:pokedex_ddd/Domain/pokemon/pokemon_details.dart';
 import 'package:pokedex_ddd/Infrastructure/pokemon/core/api_urls.dart';

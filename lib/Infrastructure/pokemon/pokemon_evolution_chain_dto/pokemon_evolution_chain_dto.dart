@@ -8,6 +8,7 @@ abstract class PokemonEvolutionChainDto implements _$PokemonEvolutionChainDto {
   const PokemonEvolutionChainDto._();
   const factory PokemonEvolutionChainDto({
     @JsonKey(name: "minlevel") required int minLevel,
+    // ignore: invalid_annotation_target, non_constant_identifier_names
     @JsonKey(name: "evolutes_to") required String evolutes_to,
     @JsonKey(name: "id") required int id,
   }) = _PokemonEvolutionChainDto;

@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex_ddd/Application/auth/auth_bloc.dart';
@@ -6,7 +5,6 @@ import 'package:pokedex_ddd/Application/login/login_bloc.dart';
 import 'package:pokedex_ddd/Presentation/core/loader.dart';
 import 'package:pokedex_ddd/Presentation/core/text_field.dart';
 import 'package:pokedex_ddd/Presentation/core/validator.dart';
-import 'package:pokedex_ddd/Presentation/routes/app_routes.dart';
 
 class SignInForm extends StatelessWidget {
   SignInForm({Key? key}) : super(key: key);
@@ -27,8 +25,9 @@ class SignInForm extends StatelessWidget {
                             serverError: (_) => "Server Error",
                             invalideEmailOrPassword: (_) =>
                                 "Invalid Email or Password")))), (r) {
-                  AutoRouter.of(context)
-                      .replaceNamed(const HomeScreenRoute().path);
+                  Navigator.pushReplacementNamed(context, '/home');
+                  // AutoRouter.of(context)
+                  //     .replaceNamed(const HomeScreenRoute().path);
                   // }
                   context
                       .read<AuthBloc>()
@@ -160,8 +159,10 @@ class SignInForm extends StatelessWidget {
                                   ),
                                   TextButton(
                                       onPressed: () {
-                                        AutoRouter.of(context).pushNamed(
-                                            const RegistrationRoute().path);
+                                        Navigator.pushNamed(
+                                            context, '/register');
+                                        // AutoRouter.of(context).pushNamed(
+                                        //     const RegistrationRoute().path);
                                       },
                                       child: const Text(
                                         "Click Here.",

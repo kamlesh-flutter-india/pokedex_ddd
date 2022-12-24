@@ -7,14 +7,23 @@ import 'package:pokedex_ddd/Domain/pokemon/pokemon_data.dart';
 import 'widgets/tab_bar_widget.dart';
 
 class PokemonDetailsPage extends StatelessWidget {
+  static const String route = '/pokenmon-details';
+
   final PokemonData pokemonData;
   final Color color;
-  const PokemonDetailsPage(
-      {Key? key, required this.color, required this.pokemonData})
-      : super(key: key);
+  const PokemonDetailsPage({
+    Key? key,
+    required this.color,
+    required this.pokemonData,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // final routes =
+    //     ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
+    // final color = routes["color"] as Color;
+    // final pokemonData = routes["pokemonData"] as PokemonData;
+
     return BlocConsumer<PokemonDetailsBloc, PokemonDetailsState>(
       builder: (context, state) {
         return DefaultTabController(
@@ -82,14 +91,12 @@ class PokemonDetailsPage extends StatelessWidget {
                     width: 200,
                     top: MediaQuery.of(context).size.height * 0.15,
                     left: MediaQuery.of(context).size.width * 0.25,
-                    child: Container(
-                      child: CachedNetworkImage(
-                        placeholder: (context, url) => Container(
-                          color: Colors.transparent,
-                        ),
-                        fit: BoxFit.cover,
-                        imageUrl: pokemonData.imageUrl,
+                    child: CachedNetworkImage(
+                      placeholder: (context, url) => Container(
+                        color: Colors.transparent,
                       ),
+                      fit: BoxFit.cover,
+                      imageUrl: pokemonData.imageUrl,
                     )),
               ],
             ),

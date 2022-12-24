@@ -18,6 +18,7 @@ abstract class PokemonDetailsDto with _$PokemonDetailsDto {
     for (int i = 0; i < egg.length; i++) {
       eggGroup.add(egg[i]['name']);
     }
+    // ignore: non_constant_identifier_names
     String poke_genera = "";
     final genera = json['genera'] as List;
     for (int i = 0; i < genera.length; i++) {

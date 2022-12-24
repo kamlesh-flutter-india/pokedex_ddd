@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex_ddd/Application/auth/auth_bloc.dart';
@@ -6,7 +5,6 @@ import 'package:pokedex_ddd/Application/registration/registration_form_bloc.dart
 import 'package:pokedex_ddd/Presentation/core/loader.dart';
 import 'package:pokedex_ddd/Presentation/core/text_field.dart';
 import 'package:pokedex_ddd/Presentation/core/validator.dart';
-import 'package:pokedex_ddd/Presentation/routes/app_routes.dart';
 
 class RegistrationForm extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -194,8 +192,10 @@ class RegistrationForm extends StatelessWidget {
                   ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text("You are now Registered")));
 
-                  AutoRouter.of(context)
-                      .replaceNamed(const HomeScreenRoute().path);
+                  Navigator.pushReplacementNamed(context, '/home');
+
+                  // AutoRouter.of(context)
+                  //     .replaceNamed(const HomeScreenRoute().path);
 
                   context
                       .read<AuthBloc>()

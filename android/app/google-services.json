@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "152732783555",
+    "firebase_url": "https://flutter-firebase-eaabb-default-rtdb.firebaseio.com",
     "project_id": "flutter-firebase-eaabb",
     "storage_bucket": "flutter-firebase-eaabb.appspot.com"
   },
@@ -73,12 +74,49 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:152732783555:android:b3446212c9726eef9b6376",
+        "android_client_info": {
+          "package_name": "com.example.one_signal_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152732783555-8c15qi76dn14b7m8s0s07v8g7u227plh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCntZRjXQVQw2ALrZS51ssf6aJ6gSLnFHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152732783555-8c15qi76dn14b7m8s0s07v8g7u227plh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:152732783555:android:ad798584addd5da19b6376",
         "android_client_info": {
           "package_name": "com.example.pokedex_ddd"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "152732783555-gbbfbq6eiajcg0s6fe7lfk7pib0jh3dh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pokedex_ddd",
+            "certificate_hash": "5cbe6e58546b60edcca95d06ee0d229981d81e71"
+          }
+        },
         {
           "client_id": "152732783555-8c15qi76dn14b7m8s0s07v8g7u227plh.apps.googleusercontent.com",
           "client_type": 3

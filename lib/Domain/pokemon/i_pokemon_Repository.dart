@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:pokedex_ddd/Domain/pokemon/pokemon_data.dart';
 import 'package:pokedex_ddd/Domain/pokemon/pokemon_details.dart';
 
